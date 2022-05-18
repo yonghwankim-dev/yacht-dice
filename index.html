@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game">
+      <!-- score board -->
+      <div class="score">
+        <table>
+          <tr>
+            <td class="score__turn">
+              Turn <br />
+              <span class="score__turn__number">1</span>/12
+            </td>
+            <td rowspan="2" style="background-color: #fef2e4">
+              <img src="images/user.svg" alt="profile1" />
+            </td>
+            <td rowspan="2">
+              <img src="images/user.svg" alt="profile2" />
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color: #3e413e; color: white">Categories</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="images/dice-one.svg" alt="dice-one" class="dice" /> Aces
+            </td>
+            <td class="score__me">
+              <span class="user1__score"></span>
+            </td>
+            <td class="score__you"><span class="user2__score"></span></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="images/dice-two.svg"
+                alt="dice-two"
+                class="dice"
+              />Douces
+            </td>
+            <td class="score__me"><span class="user1__score"></span></td>
+            <td class="score__you"><span class="user2__score"></span></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="images/dice-three.svg"
+                alt="dice-three"
+                class="dice"
+              />Threes
+            </td>
+            <td class="score__me"><span class="user1__score"></span></td>
+            <td class="score__you"><span class="user2__score"></span></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="images/dice-four.svg"
+                alt="dice-four"
+                class="dice"
+              />Fours
+            </td>
+            <td class="score__me"><span class="user1__score"></span></td>
+            <td class="score__you"><span class="user2__score"></span></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="images/dice-five.svg"
+                alt="dice-five"
+                class="dice"
+              />Fives
+            </td>
+            <td class="score__me"><span class="user1__score"></span></td>
+            <td class="score__you"><span class="user2__score"></span></td>
+          </tr>
+          <tr>
+            <td>
+              <img src="images/dice-six.svg" alt="dice-six" class="dice" />Sixes
+            </td>
+            <td class="score__me"><span class="user1__score"></span></td>
+            <td class="score__you"><span class="user2__score"></span></td>
+          </tr>
+
+          <tr class="score__subtotal">
+            <td style="background-color: #3e413e; color: white">Subtotal</td>
+            <td
+              style="background-color: #aeb0ad; color: white"
+              class="subtotal__score"
+            >
+              <span class="subtotal__score__user1">0</span>/63
+            </td>
+            <td
+              style="background-color: #aeb0ad; color: white"
+              class="subtotal__score"
+            >
+              <span class="subtotal__score__user2">0</span>/63
+            </td>
+          </tr>
+          <tr class="score__bonus">
+            <td style="background-color: #3e413e; color: white">+35 Bonus</td>
+            <td
+              style="background-color: #aeb0ad; color: white"
+              class="score__bonus__user1"
+            ></td>
+            <td
+              style="background-color: #aeb0ad; color: white"
+              class="score__bonus__user2"
+            ></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="score__p">
+              <p>
+                Bonus if
+                <img src="images/dice-one.svg" alt="dice-one" class="dice" /> -
+                <img src="images/dice-six.svg" alt="dice-six" class="dice" />
+                are over 63 points
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Choice</td>
+            <td class="score__me">
+              <span class="user1__score"></span>
+            </td>
+            <td class="score__you"><span class="user2__score"></span></td>
+          </tr>
+          <tr>
+            <td>4 of a Kind</td>
+            <td class="score__me"><span class="user1__score"></span></td>
+            <td class="score__you"><span class="user2__score"></span></td>
+          </tr>
+          <tr>
+            <td>Full House</td>
+            <td class="score__me"><span class="user1__score"></span></td>
+            <td class="score__you"><span class="user2__score"></span></td>
+          </tr>
+          <tr>
+            <td>S. Straight</td>
+            <td class="score__me"><span class="user1__score"></span></td>
+            <td class="score__you"><span class="user2__score"></span></td>
+          </tr>
+          <tr>
+            <td>L. Straight</td>
+            <td class="score__me"><span class="user1__score"></span></td>
+            <td class="score__you"><span class="user2__score"></span></td>
+          </tr>
+          <tr>
+            <td>Yacht</td>
+            <td class="score__me"><span class="user1__score"></span></td>
+            <td class="score__you"><span class="user2__score"></span></td>
+          </tr>
+          <tr>
+            <td style="background-color: #3e413e; color: white">Total</td>
+            <td class="score__me total__score__user1">0</td>
+            <td class="score__you total__score__user2">0</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- dice board -->
+      <div class="dice-board">
+        <div class="dice-board__select">
+          <div class="select">
+            <span class="selected__dice"></span><br /><button
+              class="remove__dice"
+              name="0"
+            >
+              제거
+            </button>
+          </div>
+          <div class="select">
+            <span class="selected__dice"></span><br /><button
+              class="remove__dice"
+              name="1"
+            >
+              제거
+            </button>
+          </div>
+          <div class="select">
+            <span class="selected__dice"></span><br /><button
+              class="remove__dice"
+              name="2"
+            >
+              제거
+            </button>
+          </div>
+          <div class="select">
+            <span class="selected__dice"></span><br /><button
+              class="remove__dice"
+              name="3"
+            >
+              제거
+            </button>
+          </div>
+          <div class="select">
+            <span class="selected__dice"></span><br /><button
+              class="remove__dice"
+              name="4"
+            >
+              제거
+            </button>
+          </div>
+        </div>
+        <div class="dice-board__roll">
+          <div class="roll">
+            <span class="roll__dice"></span><br /><button
+              class="choice__dice"
+              name="0"
+            >
+              선택
+            </button>
+          </div>
+          <div class="roll">
+            <span class="roll__dice"></span><br /><button
+              class="choice__dice"
+              name="1"
+            >
+              선택
+            </button>
+          </div>
+          <div class="roll">
+            <span class="roll__dice"></span><br /><button
+              class="choice__dice"
+              name="2"
+            >
+              선택
+            </button>
+          </div>
+          <div class="roll">
+            <span class="roll__dice"></span><br /><button
+              class="choice__dice"
+              name="3"
+            >
+              선택
+            </button>
+          </div>
+          <div class="roll">
+            <span class="roll__dice"></span><br /><button
+              class="choice__dice"
+              name="4"
+            >
+              선택
+            </button>
+          </div>
+          <div class="roll_action">
+            <button class="roll_btn">Roll</button>
+          </div>
+        </div>
+
+        <div class="dice-board__leave-turn">
+          <span class="leave-turn">3</span> left
+        </div>
+
+        <div class="dice-board__user">
+          <span class="user">user1</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="categories.js"></script>
+    <script src="total.js"></script>
+    <script src="speical.js"></script>
+  </body>
+</html>
